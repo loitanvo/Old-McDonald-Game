@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Old McDonalds Farm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="keys">
+    <div class="intro">What letter does Cow start with?</div>
+    <div data-key="67" class="key">
+      <img src="http://clipart-library.com/images/kcMbeMkoi.png" >
+      <span class="sound">COW</span>
+    </div>
+    <div data-key="80" class="key">
+      <img src="http://clipart-library.com/data_images/344716.png">
+      <span class="sound">PIG</span>
+    </div>
+    <div data-key="68" class="key">
+        <img src="https://openclipart.org/download/248173/Ente-coloured.svg">
+      <span class="sound">DUCK</span>
+    </div>
+    <div data-key="76" class="key">
+        <img src="http://clipart-library.com/data_images/142269.png">
+      <span class="sound">LAMB</span>
+    </div>
+    <div data-key="72" class="key">
+        <img src="http://clipart-library.com/images/8gTe45Lid.png">
+      <span class="sound">HORSE</span>
+    </div>
+    <div data-key="82" class="key">
+        <img src="http://clipart-library.com/images/5iRXRE95T.png">
+      <span class="sound">ROOSTER</span>
+    </div>
+  
+  
+    
+  </div>
+
+  <audio data-key="67" src="https://www.google.com/logos/fnbx/animal_sounds/cow.mp3"></audio> <!--Cow --> 
+  <audio data-key="80" src="https://www.google.com/logos/fnbx/animal_sounds/pig.mp3"></audio>  <!--Pig--> 
+  <audio data-key="68" src="https://www.google.com/logos/fnbx/animal_sounds/duck.mp3"></audio>  <!--Duck--> 
+  <audio data-key="76" src="https://www.google.com/logos/fnbx/animal_sounds/sheep.mp3"></audio> <!--Lamb-->
+  <audio data-key="72" src="https://www.google.com/logos/fnbx/animal_sounds/horse.mp3"></audio> <!--Horse-->
+  <audio data-key="82" src="https://www.google.com/logos/fnbx/animal_sounds/rooster.mp3"></audio> <!--Rooster-->
+
+
+<script>
+
+
+function playSound (e){
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);   // using atribute selector here for ${e.keycode}
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);   // using selector for a key
+  if(!audio) return; // this will stop the function
+  audio.currentTime = 0; //rewind to the beginning
+  audio.play();
+  key.classList.add('playing');
+}
+function removeTransition(e){
+  if(e.propertyName !== 'transform') return; //skip it if it's not a transform.
+  this.classList.remove('playing'); // console.log(propertyName);
+}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown',playSound);
+
+</script>
+  
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+html {
+  font-size: 10px;
+  background: url(https://png2.kisspng.com/sh/4de9e3377df1206bf5e92e00f2901d0d/L0KzQYm3U8E1N6RriZH0aYP2gLBuTfZiep4yedl7aXP4fMX8kvUudJJzfOVsYYDoPcfsgCRwel5reeR2LX3ydLbzTcViaWlpfdcDYnG1SYKATsk1OmM3T6QAMUW1QYG4VsU2Omg7Sqc3cH7q/kisspng-farm-agriculture-landscape-vector-farm-model-5aa8dee8ba2917.9422272515210165527625.png) bottom center;
+  background-size: cover;
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+img{
+  height: 100px;
+  width: 150px;
+  border-color:red; 
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  padding: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+ 
+  border-radius: .5rem;
+  margin: 3rem;
+  font-size: 1.5rem;
+  padding: 30rem .5rem;
+  transition: all .5s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+}
+
+.playing {
+  transform: scale(2.1);
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: black;
+}
